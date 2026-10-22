@@ -50,7 +50,6 @@ Selected network mode: VMware NAT (VMnet8) / VirtualBox NAT Network.   Why this 
 When we first tested ping from the Linux guest to the Windows 11 VM, we encountered a 100% packet loss. Our initial thought was to completely disable the Windows Defender Firewall, but doing so violates the lab rules and results in a "Not yet" grade. After checking the network profile using Get-NetConnectionProfile, we realized the network was set to Public. Instead of turning off security or enabling unsafe file sharing, we added the precise New-NetFirewallRule command via PowerShell to allow solely ICMP traffic from our local subnet. After applying this rule, the ping succeeded instantly in both directions.
 
 ## Evidence
-## Evidence
 
 - evidence/ipconfig-windows.txt — Windows guest IP configuration output.
 - evidence/ip-addr-linux.txt — Ubuntu guest network interfaces output.
