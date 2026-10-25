@@ -45,6 +45,7 @@ Performed the memory overcommitment experiment by raising the total allocated me
 ens33: 192.168.134.129       Ethernet0: 192.168.134.131
       │                            │
       └─────── Ping Both Ways ─────┘
+```
 Selected network mode: VMware NAT (VMnet8) / VirtualBox NAT Network.   Why this mode: It satisfies the core requirements because both guests can reach the internet and communicate with each other. Bridged mode was avoided due to campus MAC-filtering dropping unknown guests, and Host-only mode was avoided because it lacks internet access.   Firewall configuration: The initial ping from Linux to Windows failed because Windows treats unknown networks as Public and blocks incoming ICMP echo requests by default. This was resolved by creating a precise inbound rule allowing ICMPv4 type 8 from the local subnet only.   Overcommitment experiment:Host total RAM: 16 GB.   Total RAM promised to guests during test: 20 GB.   The host heavily utilized swapping and compression, available memory dropped near zero, and noticeable lag (thrashing) occurred.
 
 ## Overcommitment Experiment
