@@ -60,8 +60,6 @@ When we first tested ping from the Linux guest to the Windows 11 VM, we encounte
 
 ## Evidence
 
-## Evidence
-
 - [evidence/ipconfig-windows.txt](evidence/ipconfig-windows.txt) — Windows guest IP configuration output.
 - [evidence/ip-addr-linux.txt](evidence/ip-addr-linux.txt) — Ubuntu guest network interfaces output.
 - [evidence/ping-both-ways.txt](evidence/ping-both-ways.txt) — Successful bidirectional ping results between Linux and Windows.
