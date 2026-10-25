@@ -36,6 +36,7 @@ Performed the memory overcommitment experiment by raising the total allocated me
 ```
 
 ## Result
+```text 
 [Host: My Laptop] (Wi-Fi / Real IP)
       │ (Hypervisor NAT Router / VMnet8)
       ├────── virtual switch ──────┤
@@ -44,7 +45,15 @@ Performed the memory overcommitment experiment by raising the total allocated me
 ens33: 192.168.134.129       Ethernet0: 192.168.134.131
       │                            │
       └─────── Ping Both Ways ─────┘
-Selected network mode: VMware NAT (VMnet8) / VirtualBox NAT Network.   Why this mode: It satisfies the core requirements because both guests can reach the internet and communicate with each other. Bridged mode was avoided due to campus MAC-filtering dropping unknown guests, and Host-only mode was avoided because it lacks internet access.   Firewall configuration: The initial ping from Linux to Windows failed because Windows treats unknown networks as Public and blocks incoming ICMP echo requests by default. This was resolved by creating a precise inbound rule allowing ICMPv4 type 8 from the local subnet only.   Overcommitment experiment:Host total RAM: 16 GB.   Total RAM promised to guests during test: 20 GB.   The host heavily utilized swapping and compression, available memory dropped near zero, and noticeable lag (thrashing) occurred.  
+Selected network mode: VMware NAT (VMnet8) / VirtualBox NAT Network.   Why this mode: It satisfies the core requirements because both guests can reach the internet and communicate with each other. Bridged mode was avoided due to campus MAC-filtering dropping unknown guests, and Host-only mode was avoided because it lacks internet access.   Firewall configuration: The initial ping from Linux to Windows failed because Windows treats unknown networks as Public and blocks incoming ICMP echo requests by default. This was resolved by creating a precise inbound rule allowing ICMPv4 type 8 from the local subnet only.   Overcommitment experiment:Host total RAM: 16 GB.   Total RAM promised to guests during test: 20 GB.   The host heavily utilized swapping and compression, available memory dropped near zero, and noticeable lag (thrashing) occurred.
+
+## Overcommitment Experiment
+
+- **Host Total RAM:** 16 GB
+- **Total RAM Promised to Guests (During Test):** 20 GB (Ubuntu: 8 GB, Windows: 12 GB — approx. 1.3x host capacity)
+- **Before Test:** Host memory was stable, with plenty of available RAM and low commitment.
+- **After/During Test (Under Load via `stress-ng` and browser tabs):** Available memory dropped close to zero, the host heavily utilized compression and swapping, disk activity increased significantly, and overall system responsiveness slowed down (thrashing).
+- **Resolution:** After recording the metrics, the load was stopped and guest memory allocations were safely reverted to normal values.
 
 ## What did not work the first time
 When we first tested ping from the Linux guest to the Windows 11 VM, we encountered a 100% packet loss. Our initial thought was to completely disable the Windows Defender Firewall, but doing so violates the lab rules and results in a "Not yet" grade. After checking the network profile using Get-NetConnectionProfile, we realized the network was set to Public. Instead of turning off security or enabling unsafe file sharing, we added the precise New-NetFirewallRule command via PowerShell to allow solely ICMP traffic from our local subnet. After applying this rule, the ping succeeded instantly in both directions.
