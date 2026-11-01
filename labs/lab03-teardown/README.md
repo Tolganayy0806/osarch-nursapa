@@ -23,7 +23,7 @@ Below is the internal architectural layout of the **ASUS ExpertBook B3402FVA** s
 
 ![Motherboard Layout](evidence/photos/motherboard.jpg)
 
-1. **CPU / Integrated Heatsink (Центральный процессор):**
+1. **CPU / Integrated Heatsink :**
    - **What:** Intel Core processor (13th Gen Raptor Lake) integrated under the unified copper cooling heatsink.
    - **Connects to:** Soldered directly to the system board via BGA package; direct point-to-point links to memory and PCIe lanes.
    - **Limits:** Non-replaceable (soldered). Thermal performance is bounded by the cooling fan capacity.
@@ -33,7 +33,7 @@ Below is the internal architectural layout of the **ASUS ExpertBook B3402FVA** s
    - **Connects to:** CPU integrated memory controller.
    - **Limits:** Limited by module generation (DDR slot type) and maximum supported capacity according to the motherboard specification.
 
-3. **Cooling Assembly (Вентилятор):**
+3. **Cooling Assembly :**
    - **What:** Single radial blower fan and copper heat pipe conducting heat from the CPU to the rear exhaust.
    - **Connects to:** Motherboard 4-pin PWM fan header.
    - **Limits:** Subject to dust buildup and RPM limits; thermal throttling may occur under heavy multi-core loads.
@@ -43,12 +43,12 @@ Below is the internal architectural layout of the **ASUS ExpertBook B3402FVA** s
    - **Connects to:** CPU/PCH high-speed PCIe lanes.
    - **Limits:** Form factor restricted strictly to length 2280 ($22~mm \times 80~mm$) with M-key interface.
 
-5. **Main Battery Pack (Аккумулятор):**
+5. **Main Battery Pack:**
    - **What:** Rechargeable Lithium-ion battery compartment (battery pack is removed in this photo).
    - **Connects to:** Direct multi-pin battery terminal connector on the lower edge of the motherboard.
    - **Limits:** Proprietary physical form factor; cannot be expanded beyond the battery bay dimensions.
-
-6. **WLAN / Bluetooth Module (Wi-Fi адаптер):**
+     
+6. **WLAN / Bluetooth Module :**
    - **What:** Wireless network adapter card (visible with Fidocom label near the upper-left).
    - **Connects to:** M.2 Key-E (2230) slot with antenna micro-coaxial connectors.
    - **Limits:** Form factor 2230 size restriction; upgradeable to compatible newer Wi-Fi modules.
@@ -62,7 +62,8 @@ Below is the internal architectural layout of the **ASUS ExpertBook B3402FVA** s
    - **What:** Auxiliary input/output board and peripheral interface ports area.
    - **Connects to:** Motherboard via ribbon flex-cables.
    - **Limits:** Fixed to the laptop's physical port cutouts on the chassis side.
-## 3. Upgrade verdictComponentManual / Spec Sheet SaysOS Says ( from windows-specs.txt )VerdictMemory (RAM)Onboard memory + $1\times$ SO-DIMM slot; max system memory per spec pageWin32_PhysicalMemory / MaxCapacity reports total architecture capacityPartly: Can be upgraded by inserting a compatible module into the available SO-DIMM slot up to the system limit.Storage (SSD/HDD)$1\times M.2~2280$ PCIe NVMe slotGet-PhysicalDisk shows NVMe/RAID BusTypeYes: Can replace or upgrade the M.2 2280 NVMe SSD.CPU (Processor)Integrated mobile processor on system boardWin32_Processor shows soldered configurationNo: Processor is soldered directly to the motherboard and cannot be replaced.Technical Analysis of DiscrepanciesMemory Capacity ( MaxCapacity ): PowerShell reports a high theoretical max capacity hardcoded by the vendor BIOS template (matching the architectural maximum of the memory controller) rather than physical board routing limits. The service documentation is the authoritative ground truth for validated hardware ceilings.Storage Bus Type ( BusType ): PowerShell may report RAID instead of NVMe due to ASUS default BIOS settings enabling Intel VMD (Intel Rapid Storage Technology), which hooks the NVMe controller behind a proprietary storage abstraction layer while the physical drive remains an M.2 PCIe NVMe SSD.4. Comparison table: Host (Windows) vs. Guest VM (Linux)FactWindows Field & Value (Host)Linux Field & Value (Guest VM)CPU ModelWin32_Processor.Namelscpu (Model name)Physical CoresWin32_Processor.NumberOfCoreslscpu (Core(s) per socket)Logical CPUsWin32_Processor.NumberOfLogicalProcessorslscpu (CPU(s))Total MemoryWin32_ComputerSystem.TotalPhysicalMemoryfree -h (total)Disk InterfaceGet-PhysicalDisk.BusTypelsblk (TRAN)Motherboard ModelWin32_BaseBoard.Product (B3402FVA)dmidecode -t baseboardObservation on Differences Between Host and VMField Naming & Formatting: Windows WMI/CIM classes present raw unformatted integer bytes and numeric enumeration flags requiring manual decoding, whereas Linux displays human-readable binary prefixes.Virtualization Abstraction: The Linux VM intentionally masks physical reality. The real motherboard (ASUS ExpertBook B3402FVA) is replaced by an emulated virtual chipset, and the physical NVMe SSD is abstracted as a virtual SCSI device. This demonstrates why Part A commands must execute exclusively on the bare-metal host.Evidenceevidence/windows-specs.txt — Raw PowerShell transcript verifying physical hardware specifications of the ASUS ExpertBook host.evidence/linux-specs.txt — Raw Linux command log verifying CPU, memory, and virtual storage abstraction in the Ubuntu guest.evidence/photos/motherboard.jpg — Annotated internal layout diagram identifying 8 key motherboard components with connections and limitations.
+
+
 ## What I did
 - Identified the exact laptop model on the host (ASUS ExpertBook B3402FVA) and found its service manual.
 - Extracted hardware specifications on Windows via PowerShell (`windows-specs.txt`) and on the Ubuntu VM (`linux-specs.png`).
