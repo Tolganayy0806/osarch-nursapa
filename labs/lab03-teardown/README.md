@@ -90,3 +90,4 @@ Below is the internal architectural layout of the **ASUS ExpertBook B3402FVA** s
 ## Evidence
 - [evidence/windows-specs.txt](evidence/windows-specs.txt) - PowerShell hardware transcript from the host.
 - [evidence/linux-specs.png](evidence/linux-specs.png) - Terminal output from the Ubuntu VM guest.
+- [evidence/photos/motherboard.jpg](evidence/moterboard.jpg) — Annotated internal layout diagram identifying 8 key motherboard components with connections and limitations.
