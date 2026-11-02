@@ -1,29 +1,21 @@
-# Build Document: Setting up Test VMs for New Developers
-**Target Audience:** Aigerim (Office Manager)  
-**Goal:** Rebuild Linux and Windows guest environments from scratch.
+# Build and Configuration Guide (Ticket 1)
 
----
+## Step 1: Virtual Machines Provisioning
+1. Created two virtual machines in VMware Workstation:
+   - `lab01-ubuntu` (Ubuntu Guest OS)
+   - `lab02-win11` (Windows 11 Guest OS)
+2. Allocated resources (CPU cores and RAM) according to lab requirements (Evidence: `evidence/01-vm-cpu-ram.png`).
+3. Configured virtual hard disks with appropriate sizing (Evidence: `evidence/02-disk-settings.png`).
 
-## Step 1. Creating a New Virtual Machine
-1. Open **VirtualBox** on your host machine.
-2. Click the **New** button at the top to launch the creation wizard.
-3. Enter a descriptive name (e.g., `Dev-Test-Linux`), select the ISO image file, and choose the Linux/Windows distribution.
-> **Evidence:** `evidence/01-new-vm-wizard.png`  
-> *Why:* Naming the VM clearly and providing the correct ISO upfront prevents configuration errors later during installation.
+## Step 2: Network Configuration
+1. Attached virtual network adapters to **NAT** mode for both VMs to ensure internet access and local inter-VM communication (Evidence: `evidence/03-network-adapter.png`).
+2. Verified guest operating system kernel/version details (Evidence: `evidence/04-guest-uname.txt`).
 
-## Step 2. Allocating Hardware Resources
-1. Set the Memory (RAM) allocation to **2048 MB (2 GB)**.
-2. Set the processor count to **2 CPU cores**.
-> *Why:* Based on our host machine's total capacity (16 GB RAM), allocating 2 GB leaves enough resources for the host OS to run smoothly while giving the guest enough juice to compile code.
+## Step 3: Network Connectivity Verification
+1. Retrieved IP addresses:
+   - Ubuntu: `192.168.134.129`
+   - Windows 11: `192.168.134.131`
+2. Executed bidirectional ping tests between `lab01-ubuntu` and `lab02-win11` with 0% packet loss (Evidence: `evidence/05-ping-between-guests.txt`).
 
-## Step 3. Configuring Virtual Hard Disk
-1. Select **Create a virtual hard disk now**.
-2. Set the disk size to **20 GB** and choose **VDI (VirtualBox Disk Image)** with *Dynamically allocated* storage.
-> **Evidence:** `evidence/02-disk-settings.png`  
-> *Why:* Dynamic allocation saves physical disk space on the host, growing only as the developer writes files inside the guest.
-
-## Step 4. Setting Up Network Adapter
-1. In the VM settings, navigate to **Network** -> **Adapter 1**.
-2. Attached to: **NAT**.
-> **Evidence:** `evidence/03-network-adapter.png`  
-> *Why:* The corporate network filters by physical MAC addresses. Using NAT hides the VM behind the host's IP address, allowing instant internet access without triggering network blocks.
+## Step 4: Snapshot Baseline
+1. Created a clean baseline snapshot named `clean-install` for recovery and future labs (Evidence: `evidence/06-snapshot-list.png`).
