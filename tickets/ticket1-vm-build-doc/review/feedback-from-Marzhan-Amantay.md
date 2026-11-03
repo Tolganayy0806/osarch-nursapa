@@ -1,32 +1,22 @@
-# Peer Review on Ticket 1 (VM Build Document)
+# Feedback on Nursapa Tolganay's BUILD.md
+Reviewer: Marzhan Amantay
+Commit reviewed: https://github.com/Tolganayy0806/osarch-nursapa/blob/f077ea8bd845e73ceb464715f09802080e459756/tickets/ticket1-vm-build-doc/BUILD.md
+Hypervisor I used: VMware Workstation Pro, version 26H1
 
-* Reviewer: Marzhan Amantay
-* Author of BUILD.md: Tolganay Nursapa
-* Host Platform tested on: ASUS VivoBook 15 X515EA (Windows 11)
-* Date: 02.11.2026
-* Verdict: PASS (Reproduced successfully)
+## First step where I got stuck
+Step number: None
+What the step says: N/A
+What I did: Followed the configuration steps from initial wizard to final network verification.
+What happened / what I had to guess: The installation finished without unresolvable roadblocks. 
 
----
+## Other places I hesitated
+- Step 5 (Networking): When choosing between Bridged and NAT, I paused to confirm whether the guest subnet would collide with local adapter ranges. The explanation of internal NAT translation clarified why external routing works without MAC conflicts.
+- Step 6 (OpenSSH Setup): During user profile setup, it was easy to accidentally skip the OpenSSH checkbox; emphasizing that checkbox with an explicit visual warning helps ensure SSH is not omitted.
 
-## 1. Literal Execution Log
+## Settings I would not have chosen without the document
+- Deferring the ISO installation source to bypass VMware Easy Install automation.
+- Disabling full disk space preallocation to preserve host SSD capacity via thin provisioning.
+- Forcing NAT adapter assignment to avoid campus network MAC registration blocks.
 
-I walked through the provided BUILD.md document step-by-step:
-
-* Step 1–2 (VM Setup): Wizard choices followed exactly as written.
-* Step 3 (Storage Configuration): Disk allocation set properly without preallocating full storage.
-* Step 4–5 (Hardware & Network): Configured RAM, vCPUs, and NAT adapter correctly.
-* Step 6–7 (OS & Connectivity): Installed base system, verified OpenSSH service, and tested network reachability.
-* Step 8 (Snapshot Baseline): Snapshot taken and verified in Snapshot Manager.
-
----
-
-## 2. Issues / First Point of Friction
-
-* First point stuck: No blocking issues encountered.
-* Recommendation: Ensure all justification blocks (Why X and not Y) clearly mention the risk of campus Wi-Fi MAC filtering when configuring the network adapter.
-
----
-
-## 3. Conclusion
-
-The documentation is completely reproducible for an external user without prior hypervisor knowledge.
+## One thing that worked well
+- The inclusion of explicit verification commands (uname -a, ping, and snapshot checks) after key stages made it immediate and obvious whether the deployment succeeded.
