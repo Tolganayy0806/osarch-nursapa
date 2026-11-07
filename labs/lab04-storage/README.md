@@ -78,6 +78,10 @@ md0 : active raid1 sdd1[2(S)] sdb1[0]
 
 ---
 
+## Result
+
+*Successfully partitioned and formatted a 2 GB NTFS volume on Windows using GPT, constructed a software RAID 1 mirror with `mdadm` on Linux using two active partitions and a hot spare, validated data persistence via SHA-256 checksum verification after a simulated disk failure, and successfully rebuilt the array using the spare drive.
+
 ## What did not work the first time
 
 * **What I saw:** The `New-Partition` command threw an error in PowerShell on Windows, failing to assign drive letter `E` to the newly allocated disk space.
