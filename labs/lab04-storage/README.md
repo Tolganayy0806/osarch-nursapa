@@ -1,4 +1,3 @@
-```markdown
 # Lab 4 — Partition, mirror, fail, and recover
 
 **Pair:** Tolganay  
