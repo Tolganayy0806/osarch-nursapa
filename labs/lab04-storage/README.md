@@ -1,7 +1,7 @@
 # Lab 4 — Partition, mirror, fail, and recover
 
 **Pair:** Tolganay  
-**Driver first half:** Tolganay
+**Driver first half:**  Tolganay
 **Machine:** ASUS B402 / Virtual Environment  
 **Date:** 07.11.2026
 
