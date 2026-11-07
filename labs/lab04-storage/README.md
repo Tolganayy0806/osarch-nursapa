@@ -2,7 +2,6 @@
 
 **Pair:** Tolganay  
 **Driver first half:** Tolganay
-
 **Machine:** ASUS B402 / Virtual Environment  
 **Date:** 07.11.2026
 
