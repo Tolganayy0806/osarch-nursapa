@@ -1,1 +1,0 @@
-072b23fc3512192aa14435eb3097e6600a7b775d0d0c53c42deff320aa012519  /mnt/mirror/test_file.txt
