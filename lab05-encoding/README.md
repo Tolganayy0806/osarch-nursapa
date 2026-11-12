@@ -27,3 +27,7 @@ Changed: encoding CP1251 -> UTF-8; line ending changed to LF;
 file after:   (from evidence/file-after.txt)
 Opened in:    Excel (Desktop version), LibreOffice Calc, cat on Ubuntu
               — evidence/opens-correctly.png
+
+
+## Setting up the Folder - saving a checkksum
+919027f1f8c71d85cba3f 12aad0f6c927d4e0450cfb2a2d63378a69f
