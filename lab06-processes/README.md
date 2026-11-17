@@ -56,8 +56,8 @@ During the extraction of kernel logs via `dmesg`, running the command without ro
 
 ## Evidence
 
-- [evidence/htop.png](evidence/htop.png) — `htop` process monitoring and resource breakdown[cite: 12]
-- [evidence/process-explorer.png](evidence/process-explorer.png) — Process Explorer view showing process details and handles[cite: 12]
-- [evidence/task-manager.png](evidence/task-manager.png) — Task Manager metrics comparison[cite: 8]
-- [evidence/memory-pressure.txt](evidence/memory-pressure.txt) — `free -h` figures recorded before, during, and after the memory pressure test[cite: 12, 21]
-- [evidence/kernel-log-extract.txt](evidence/kernel-log-extract.txt) — Extracted system logs verifying the Linux kernel OOM killer action[cite: 12]
+- [htop.png](./evidence/htop.png) — `htop` process monitoring and resource breakdown[cite: 12]
+- [process-explorer.png](./evidence/process-explorer.png) — Process Explorer view showing process details and handles[cite: 12]
+- [task-manager.png](./evidence/task-manager.png) — Task Manager metrics comparison[cite: 8]
+- [memory-pressure.txt](./evidence/memory-pressure.txt) — `free -h` figures recorded before, during, and after the memory pressure test[cite: 12, 21]
+- [kernel-log-extract.txt](./evidence/kernel-log-extract.txt) — Extracted system logs verifying the Linux kernel OOM killer action[cite: 12]
