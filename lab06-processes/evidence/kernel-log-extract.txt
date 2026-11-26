@@ -1,7 +1,30 @@
-2026-11-17T15:57:40.004139+00:00 lab01 kernel: python3 invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
-2026-11-17T15:57:40.005161+00:00 lab01 kernel:  oom_kill_process.cold+0x8/0xac
-2026-11-17T15:57:40.005162+00:00 lab01 kernel:  __alloc_pages_may_oom+0x10a/0x1d0
-2026-11-17T15:57:40.005247+00:00 lab01 kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
-2026-11-17T15:57:40.005268+00:00 lab01 kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-1.scope,task=python3,pid=2242,uid=1000
-2026-11-17T15:57:40.005268+00:00 lab01 kernel: Out of memory: Killed process 2242 (python3) total-vm:3046148kB, anon-rss:3030552kB, file-rss:2364kB, shmem-rss:0kB, UID:1000 pgtables:6000kB oom_score_adj:0
-2026-11-17T15:57:40.035653+00:00 lab01 systemd[1]: session-1.scope: The kernel OOM killer killed some processes in this unit.
+[Thu Nov 26 10:58:07 2026] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[Thu Nov 26 10:58:07 2026] PM: hibernation: Registered nosave memory: [mem 0x0009e000-0x000fffff]
+[Thu Nov 26 10:58:07 2026] PM: hibernation: Registered nosave memory: [mem 0xbfed0000-0xbfefffff]
+[Thu Nov 26 10:58:07 2026] PM: hibernation: Registered nosave memory: [mem 0xc0000000-0xffffffff]
+[Thu Nov 26 10:58:07 2026] Early memory node ranges
+[Thu Nov 26 10:58:07 2026] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[Thu Nov 26 10:58:07 2026] Freeing SMP alternatives memory: 56K
+[Thu Nov 26 10:58:07 2026] Memory: 3322124K/4193716K available (23836K kernel code, 4957K rwdata, 16776K rodata, 5304K init, 5840K bss, 838764K reserved, 0K cma-reserved)
+[Thu Nov 26 10:58:07 2026] x86/mm: Memory block size: 128MB
+[Thu Nov 26 10:58:09 2026] Freeing initrd memory: 66308K
+[Thu Nov 26 10:58:09 2026] Freeing unused decrypted memory: 2028K
+[Thu Nov 26 10:58:09 2026] Freeing unused kernel image (initmem) memory: 5304K
+[Thu Nov 26 10:58:09 2026] Freeing unused kernel image (text/rodata gap) memory: 736K
+[Thu Nov 26 10:58:09 2026] Freeing unused kernel image (rodata/data gap) memory: 1656K
+[Thu Nov 26 10:58:09 2026] systemd[1]: Reached target swap.target - Swaps.
+[Thu Nov 26 10:58:12 2026] systemd[1]: Reached target swap.target - Swaps.
+[Thu Nov 26 10:58:13 2026] vmwgfx 0000:00:0f.0: [drm] Legacy memory limits: VRAM = 4096 KiB, FIFO = 256 KiB, surface = 0 KiB
+[Thu Nov 26 10:58:13 2026] vmwgfx 0000:00:0f.0: [drm] Maximum display memory size is 262144 KiB
+[Thu Nov 26 12:13:03 2026] python3 invoked oom-killer: gfp_mask=0x140dca(GFP_HIGHUSER_MOVABLE|__GFP_ZERO|__GFP_COMP), order=0, oom_score_adj=0
+[Thu Nov 26 12:13:03 2026]  oom_kill_process.cold+0x8/0xac
+[Thu Nov 26 12:13:03 2026]  out_of_memory+0xff/0x2b0
+[Thu Nov 26 12:13:03 2026]  __alloc_pages_may_oom+0x10a/0x1d0
+[Thu Nov 26 12:13:03 2026] 0 pages in swap cache
+[Thu Nov 26 12:13:03 2026] Free swap  = 0kB
+[Thu Nov 26 12:13:03 2026] Total swap = 0kB
+[Thu Nov 26 12:13:03 2026] Memory cgroup min protection 0kB -- low protection 0kB
+[Thu Nov 26 12:13:03 2026] Tasks state (memory values in pages):
+[Thu Nov 26 12:13:03 2026] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[Thu Nov 26 12:13:03 2026] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-4.scope,task=python3,pid=2766,uid=1000
+[Thu Nov 26 12:13:03 2026] Out of memory: Killed process 2766 (python3) total-vm:3046148kB, anon-rss:2993964kB, file-rss:2400kB, shmem-rss:0kB, UID:1000 pgtables:5928kB oom_score_adj:0

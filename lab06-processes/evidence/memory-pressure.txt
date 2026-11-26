@@ -1,4 +1,18 @@
 === BEFORE ===
+<<<<<<< HEAD
               total        used        free      shared  buff/cache   available
 Mem:          3.3Gi       561Mi       2.4Gi       1.5Mi       530Mi       2.7Gi
 Swap:         1.0Gi          0B       1.0Gi
+=======
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       542Mi       2.5Gi       1.5Mi       517Mi       2.7Gi
+Swap:             0B          0B          0B
+=== DURING ===
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       505Mi       2.8Gi       1.5Mi       110Mi       2.8Gi
+Swap:             0B          0B          0B
+=== AFTER ===
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       508Mi       2.8Gi       1.5Mi       125Mi       2.8Gi
+Swap:             0B          0B          0B
+>>>>>>> a0f7633 (Update lab06 evidence and notes)
