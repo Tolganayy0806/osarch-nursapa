@@ -120,7 +120,7 @@ All 11 CLI dojo challenges were completed in Command Prompt (`cmd`) on the Windo
 
 - For Challenge #8, the initial `findstr /R "^8[0-9] \|^9[0-9] \|^100 " C:\dojo\scores.txt` pattern matched only `88 dana` because of how `\|` and spaces were parsed by `findstr`. Switching to `findstr /R "^[89][0-9] ^100" C:\dojo\scores.txt` returned both `95 aidos` and `88 dana`.
 
-## Evidenceы
+## Evidence
 
 ## Evidence
 
