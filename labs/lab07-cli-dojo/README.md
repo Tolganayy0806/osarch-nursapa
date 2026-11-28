@@ -85,7 +85,7 @@ Ping request could not find host dojo.test. Please check the name and try again.
 
 - **Setup:** the first `for /l … >> C:\dojo\logs\app.log` line was pasted only partly (it ended at `login ok >>`), and cmd answered `The syntax of the command is incorrect`. Nothing had been written. I did `cd C:\dojo\logs` first and typed the shorter lines with `>> app.log` — the log then had the expected 41 lines.
 - **#8:** `taskkill /pid 7340 /f` → `ERROR: The process "7340" not found`. I had used a PID from an example instead of the real one. `tasklist /fi "imagename eq notepad.exe"` showed PID 3124, and `taskkill /pid 3124 /f` worked (visible in ch08.png).
-- **#17:** same mistake — `tasklist /svc /fi "pid eq 1052"` → `No tasks are running which match the specified criteria`. The real PID from `netstat` was 932 (visible in ch17.png).
+- **#17:** same mistake — `tasklist /svc /fi "pid eq 1052"` → `No tasks are running which match the specified criteria`. The real PID from `netstat` was 932 (the final ch17.png shows the correct run with PID 932).
 - **Evidence file:** in my first attempt `output-all-challenges.txt` stayed empty because I created it in the editor instead of appending to it from `cmd`. This time every challenge was appended with `echo ===== #NN %time% ===== >> %EV%` and `[command] >> %EV% 2>&1`.
 
 ## Evidence
