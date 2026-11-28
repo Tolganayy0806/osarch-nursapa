@@ -1,0 +1,144 @@
+===== #01 16:01:48.95 ===== 
+C:\Users\Tolganay
+===== #01 16:02:37.95 ===== 
+C:\Users\Tolganay
+===== #02 16:15:40.09 ===== 
+DESKTOP-4467D2D
+desktop-4467d2d\tolganay
+===== #03 16:17:39.78 ===== 
+ Volume in drive C has no label.
+ Volume Serial Number is 78BA-3EB6
+
+ Directory of C:\dojo
+
+11/28/2026  04:15 PM    <DIR>          .
+11/28/2026  04:15 PM    <DIR>          backup
+11/28/2026  04:15 PM    <DIR>          logs
+11/28/2026  03:58 PM                51 scores.txt
+               1 File(s)             51 bytes
+
+ Directory of C:\dojo\logs
+
+11/28/2026  04:15 PM    <DIR>          .
+11/28/2026  04:15 PM    <DIR>          ..
+11/28/2026  03:58 PM             1,071 app.log
+11/28/2026  04:15 PM    <DIR>          old
+               1 File(s)          1,071 bytes
+               3 Dir(s)  38,180,757,504 bytes free
+===== #04 16:19:13.70 ===== 
+dojo started
+04:17 PM
+===== #05 16:20:53.05 ===== 
+C:\Windows\System32\PING.EXE
+===== #06 16:22:47.68 ===== 
+   IPv4 Address. . . . . . . . . . . : 192.168.134.131(Preferred) 
+   Default Gateway . . . . . . . . . : 192.168.134.2
+   DNS Servers . . . . . . . . . . . : 192.168.134.2
+===== #07 16:24:23.65 ===== 
+
+---------- C:\DOJO\PROCS.TXT: 167
+===== #08 16:29:37.21 ===== 
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+Notepad.exe                  11928 Console                    1     99,440 K
+SUCCESS: The process with PID 11928 has been terminated.
+===== #09 16:31:36.59 ===== 
+ERROR disk quota exceeded for user1 
+ERROR disk quota exceeded for user2 
+ERROR disk quota exceeded for user3 
+ERROR disk quota exceeded for user4 
+ERROR disk quota exceeded for user5 
+ERROR disk quota exceeded for user6 
+ERROR disk quota exceeded for user7 
+===== #10 16:32:48.16 ===== 
+11
+===== #11 16:34:18.33 ===== 
+ Volume in drive C has no label.
+ Volume Serial Number is 78BA-3EB6
+
+ Directory of C:\dojo\logs
+
+11/28/2026  03:58 PM             1,071 app.log
+               1 File(s)          1,071 bytes
+
+ Directory of C:\dojo\backup
+
+11/28/2026  03:58 PM             1,071 app.log
+               1 File(s)          1,071 bytes
+               0 Dir(s)  38,177,611,776 bytes free
+===== #12 16:35:46.39 ===== 
+File Not Found
+===== #13 16:37:06.90 ===== 
+gateway OK 
+===== #14 16:41:15.44 ===== 
+1:INFO user1 login ok 
+10:INFO user10 login ok 
+11:INFO user11 login ok 
+12:INFO user12 login ok 
+13:INFO user13 login ok 
+14:INFO user14 login ok 
+15:INFO user15 login ok 
+16:INFO user16 login ok 
+17:INFO user17 login ok 
+18:INFO user18 login ok 
+19:INFO user19 login ok 
+31:ERROR disk quota exceeded for user1 
+38:WARN slow response for user1 
+===== #15 16:42:20.67 ===== 
+95 aidos
+88 dana
+79 timur
+72 zarina
+61 bekzat
+===== #16 16:44:28.58 ===== 
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+dwm.exe                       1132 Console                    1     98,012 K
+Memory Compression            2204 Services                   0    153,892 K
+svchost.exe                   3532 Services                   0     55,200 K
+MsMpEng.exe                   3780 Services                   0    150,036 K
+explorer.exe                  5804 Console                    1    219,316 K
+SearchHost.exe                6536 Console                    1    116,732 K
+StartMenuExperienceHost.e     6544 Console                    1    135,288 K
+RuntimeBroker.exe             6680 Console                    1     61,408 K
+msedgewebview2.exe            7072 Console                    1    126,900 K
+msedgewebview2.exe            7392 Console                    1    112,632 K
+TabTip.exe                    2620 Console                    1     51,300 K
+msedge.exe                    9904 Console                    1    124,948 K
+TextInputHost.exe             9928 Console                    1     74,196 K
+ShellExperienceHost.exe       5876 Console                    1     68,560 K
+WindowsTerminal.exe           8488 Console                    1     88,648 K
+SnippingTool.exe              5828 Console                    1     79,516 K
+Widgets.exe                   6520 Console                    1     71,460 K
+SnippingTool.exe             11724 Console                    1     82,676 K
+===== #17 16:47:41.26 ===== 
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       932
+  TCP    [::]:135               [::]:0                 LISTENING       932
+
+Image Name                     PID Services                                    
+========================= ======== ============================================
+svchost.exe                    932 RpcEptMapper, RpcSs                         
+===== #18 16:49:26.28 ===== 
+
+Pinging dojo.test [127.0.0.1] with 32 bytes of data:
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+
+Ping statistics for 127.0.0.1:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+Ping request could not find host dojo.test. Please check the name and try again.
+===== #19 16:52:24.21 ===== 
+C:\dojo\errors.txt 16
+C:\dojo\notes.txt 24
+C:\dojo\procs.txt 12950
+C:\dojo\scores.txt 51
+C:\dojo\backup\app.log 1071
+C:\dojo\logs\app.log 1071
+===== #20 16:52:35.62 ===== 
+run1 exit=1 
+run2 exit=1 
+run3 exit=2 
+run4 exit=0 
